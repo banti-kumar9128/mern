@@ -2,13 +2,14 @@ import React, { useContext } from "react";
 import { AppContext } from "../context/AppContex";
 
 const MenuCard = ({ menu }) => {
-    const {navigate} = useContext(AppContext)
+  const { navigate } = useContext(AppContext);
   return (
-   <div lassName=" bg-gradient-to-r from-[#52cdd4] to-indigo-600 p-2   rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
-    <div onClick={()=>navigate(`/menu-details/${menu._id}`)}
+    <div lassName=" bg-gradient-to-r from-[#52cdd4] to-indigo-600 p-2   rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+      <div
+        onClick={() => navigate(`/menu-details/${menu._id}`)}
         className="relative h-56 overflow-hidden cursor-pointer bg-linear-to-r from-[#52cdd4] to-indigo-600 p-2 rounded-md"
-        >
-          <img
+      >
+        <img
           src={menu.image}
           alt={menu.name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -21,12 +22,10 @@ const MenuCard = ({ menu }) => {
               Unavailable
             </div>
           )}
-        </div>  
+        </div>
+      </div>
 
-
-    </div>
-
-    <div className="p-5 ">
+      <div className="p-5 ">
         <h3 className="text-xl font-bold text-gray-800 mb-2 line-clamp-1">
           {menu.name}
         </h3>
@@ -39,11 +38,10 @@ const MenuCard = ({ menu }) => {
           <div>
             <p className="text-2xl font-bold text-gray-900">${menu.price}</p>
           </div>
+        </div>
       </div>
-      </div>
-   </div>
+    </div>
   );
 };
 
 export default MenuCard;
-
