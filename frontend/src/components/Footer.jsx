@@ -57,7 +57,7 @@ const Footer = () => {
                 placeholder="Enter your email.."
                 className="w-full h-full pl-6 outline-none text-sm bg-transparent text-white placeholder-white/60"
               />
-              <button className="bg-gradient-to-b from-[#5623D8] to-[#7B53E2] active:scale-95 transition w-56 h-10 rounded-full text-sm text-white mr-1.5">
+              <button className="bg-linear-to-b from-[#5623D8] to-[#7B53E2] active:scale-95 transition w-56 h-10 rounded-full text-sm text-white mr-1.5">
                 Subscribe
               </button>
             </div>
@@ -65,7 +65,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="w-full h-px mt-5 mb-4 bg-gradient-to-r from-black via-white/25 to-black" />
+        <div className="w-full h-px mt-5 mb-4 bg-linear-to-r from-black via-white/25 to-black" />
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">

@@ -70,7 +70,7 @@ const Menus = () => {
       : menus.filter((item) => item.category?._id === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#843fbc] to-indigo-600 p-2 rounded-md  py-12">
+    <div className="min-h-screen bg-linear-to-r from-[#843fbc] to-indigo-600 p-2 rounded-md  py-12">
       {previewImage && (
     <div
       className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"

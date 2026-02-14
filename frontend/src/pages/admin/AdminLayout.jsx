@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react"
-import { AppContext } from "../../context/AppContex"
+import React, { useContext, useState } from "react";
+import { AppContext } from "../../context/AppContex";
 import {
   BookAIcon,
   Grid3x3,
@@ -9,49 +9,53 @@ import {
   Plus,
   ShoppingCart,
   X,
-} from "lucide-react"
-import { useLocation, Link, Outlet } from "react-router-dom"
-import axios from "axios"
-import toast from "react-hot-toast"
+} from "lucide-react";
+import { useLocation, Link, Outlet, useNavigate } from "react-router-dom";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const AdminLayout = () => {
-  const { setAdmin } = useContext(AppContext)
-  const location = useLocation()
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const { setAdmin } = useContext(AppContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const menuItems = [
     { path: "/admin", name: "Dashboard", Icon: LayoutDashboard },
     { path: "/admin/add-category", name: "Add Category", Icon: Plus },
-     { path: "/admin/categories", name: "All Category", Icon: Grid3x3 },
+    { path: "/admin/categories", name: "All Category", Icon: Grid3x3 },
     { path: "/admin/add-menu", name: "Add Menu", Icon: Package },
     { path: "/admin/menus", name: " All Menu", Icon: ShoppingCart },
-   
-    
+
     { path: "/admin/orders", name: "Orders", Icon: ShoppingCart },
     { path: "/admin/bookings", name: "Bookings", Icon: BookAIcon },
-  ]
+  ];
 
   // ✅ active route match (nested routes support)
-  const isActive = (path) => location.pathname.startsWith(path)
+  const isActive = (path) => location.pathname.startsWith(path);
 
   const logout = async () => {
     try {
       const { data } = await axios.post(
         "/api/auth/logout",
         {},
-        { withCredentials: true }
-      )
+        { withCredentials: true },
+      );
       if (data.success) {
-        toast.success("Logged out successfully")
-        setAdmin(false)
-        localStorage.removeItem("admin")
+        toast.success("Logged out successfully");
+        setAdmin(false);
+        localStorage.removeItem("admin");
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+        delete axios.defaults.headers.common["Authorization"];
+        navigate("/admin/login");
       } else {
-        toast.error(data.message)
+        toast.error(data.message);
       }
     } catch (error) {
-      toast.error("Something went wrong")
+      toast.error("Something went wrong");
     }
-  }
+  };
 
   return (
     <div className="flex h-screen bg-gray-200">
@@ -78,15 +82,15 @@ const AdminLayout = () => {
           {/* NAVBAR */}
           <nav className="flex-1 px-4 space-y-2 overflow-y-auto">
             {menuItems.map((item) => {
-              const Icon = item.Icon
-              const active = isActive(item.path)
+              const Icon = item.Icon;
+              const active = isActive(item.path);
 
               return (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => {
-                    if (window.innerWidth < 1024) setSidebarOpen(false)
+                    if (window.innerWidth < 1024) setSidebarOpen(false);
                   }}
                   className={`flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-all
                   ${
@@ -98,7 +102,7 @@ const AdminLayout = () => {
                   <Icon size={20} className="mr-3" />
                   {item.name}
                 </Link>
-              )
+              );
             })}
           </nav>
 
@@ -117,7 +121,7 @@ const AdminLayout = () => {
         <Outlet />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AdminLayout
+export default AdminLayout;

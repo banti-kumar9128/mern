@@ -88,13 +88,19 @@ const AppContextProvider = ({ children }) => {
     }
   };
 
-  axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
-  axios.defaults.withCredentials = true;
+  useEffect(() => {
+    // Set axios config only once when component mounts
+    axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
+    axios.defaults.withCredentials = true;
 
-  // Set authorization header if token exists
-  if (token) {
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-  }
+    // Set authorization header if token exists
+    if (token) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    } else {
+      delete axios.defaults.headers.common["Authorization"];
+    }
+  }, [token]);
+
   useEffect(() => {
     fetchMenus();
     if (user) {

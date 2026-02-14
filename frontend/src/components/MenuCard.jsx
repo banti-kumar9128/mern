@@ -6,7 +6,7 @@ const MenuCard = ({ menu }) => {
   return (
    <div lassName=" bg-gradient-to-r from-[#52cdd4] to-indigo-600 p-2   rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group">
     <div onClick={()=>navigate(`/menu-details/${menu._id}`)}
-        className="relative h-56 overflow-hidden cursor-pointer bg-gradient-to-r from-[#52cdd4] to-indigo-600 p-2 rounded-md"
+        className="relative h-56 overflow-hidden cursor-pointer bg-linear-to-r from-[#52cdd4] to-indigo-600 p-2 rounded-md"
         >
           <img
           src={menu.image}
@@ -14,7 +14,7 @@ const MenuCard = ({ menu }) => {
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         {/* Overlay on hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           {/* Availability Badge */}
           {!menu.isAvailable && (
             <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">

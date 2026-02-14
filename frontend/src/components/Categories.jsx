@@ -83,7 +83,7 @@ const Categories = () => {
       <div className="container mx-auto px-4 text-center  ">
 
         <h2 className="text-3xl font-bold mb-2 pt-10 ">
-           <span className="bg-gradient-to-r from-[#52cdd4] to-indigo-600 p-2 rounded-md "><span className="bg-gradient-to-r from-[#CB52D4] to-indigo-600"> Explore Our</span> <span className=" bg-gradient-to-r from-[#CB52D4] to-indigo-600 rounded-md  text-orange-600">Categories</span></span>
+           <span className="bg-linear-to-r from-[#52cdd4] to-indigo-600 p-2 rounded-md "><span className="bg-linear-to-r from-[#CB52D4] to-indigo-600"> Explore Our</span> <span className=" bg-linear-to-r from-[#CB52D4] to-indigo-600 rounded-md  text-orange-600">Categories</span></span>
         </h2>
 
         <div className=" w-full flex flex-wrap justify-center gap-4  sm:mb-0 md:mb-10  sm:overflow-x-auto p-2 ">
