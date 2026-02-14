@@ -72,18 +72,18 @@ const Menus = () => {
   return (
     <div className="min-h-screen bg-linear-to-r from-[#843fbc] to-indigo-600 p-2 rounded-md  py-12">
       {previewImage && (
-    <div
-      className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-      onClick={() => setPreviewImage(null)}
-    >
-      <img
-        src={previewImage}
-        onClick={(e) => e.stopPropagation()}
-        className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
-        alt=""
-      />
-    </div>
-  )}
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+          onClick={() => setPreviewImage(null)}
+        >
+          <img
+            src={previewImage}
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl"
+            alt=""
+          />
+        </div>
+      )}
 
       <div className="container mx-auto px-4">
         {/* Heading */}
@@ -137,14 +137,14 @@ const Menus = () => {
                 className="bg-white rounded-xl shadow-md overflow-hidden"
               >
                 <img
-  src={item.image}
-  alt={item.name}
-  onClick={(e) => {
-    e.stopPropagation();
-    setPreviewImage(item.image);
-  }}
-  className="w-full h-48 object-cover cursor-pointer"
-/>
+                  src={item.image}
+                  alt={item.name}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setPreviewImage(item.image);
+                  }}
+                  className="w-full h-48 object-cover cursor-pointer"
+                />
 
                 <div className="p-4">
                   <h2 className="text-xl font-semibold">{item.name}</h2>

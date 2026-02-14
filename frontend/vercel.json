@@ -2,8 +2,11 @@
   "buildCommand": "cd frontend/frontend && npm install && npm run build",
   "outputDirectory": "frontend/frontend/dist",
   "env": {
-    "VITE_BASE_URL": "@vite_base_url"
-  },
+    
+  "VITE_BASE_URL": "https://your-backend-name.onrender.com"
+},
+
+  
   "rewrites": [
     {
       "source": "/(.*)",

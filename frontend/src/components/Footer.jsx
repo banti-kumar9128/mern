@@ -2,22 +2,17 @@ import React from "react";
 
 const Footer = () => {
   return (
-    
-      <footer className="bg-black py-6 px-4 sm:px-6 lg:px-8 font-poppins  bottom-0 left-0 w-full z-50">
-;
-
-    
+    <footer className="bg-black py-6 px-4 sm:px-6 lg:px-8 font-poppins  bottom-0 left-0 w-full z-50">
+      ;
       <div className="w-full max-w-7xl mx-auto">
         <div className="flex flex-wrap justify-between gap-y-12 lg:gap-x-8">
           {/* Logo + Description */}
-          
-
 
           {/* Important Links */}
           <div className="w-full md:w-[45%] lg:w-[15%] flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-sm text-white font-medium">Important Links</h3>
             <div className="flex flex-col gap-2 mt-3">
-              {["Home", "About", "Portfolio", "Contact",].map((item) => (
+              {["Home", "About", "Portfolio", "Contact"].map((item) => (
                 <a
                   key={item}
                   href="#"
